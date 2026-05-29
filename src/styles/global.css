@@ -304,12 +304,13 @@ body{
     z-index: 999;
     display: flex;
     flex-direction: column;
-    padding: 40px;
+    padding: 0px;
 }
 
 .menu-item {
     position: relative;
-    height: 100px;
+    /*height: 100px;*/
+    flex: 1;
     display: flex;
     align-items: center;
     overflow: hidden;
@@ -333,9 +334,11 @@ body{
 
 .menu-item a {
     position: relative;
+    padding-left: 50px;
     z-index: 2;
     color: white;
     text-decoration: none;
+
 }
 
 .menu-item:hover::before {
@@ -346,13 +349,16 @@ body{
     font-family: "Duality";
     font-size: 10px;
     color: white;
-    margin-bottom: 80px;
+    padding-top: clamp(1.5rem, 4vw, 3rem);
+    padding-left: clamp(1.5rem, 4vw, 3rem);
+    margin-bottom: clamp(3rem, 8vw, 5rem);
 }
 
 .overlay-links{
     display: flex;
     flex-direction: column;
     width:100%;
+    flex: 1;
 }
 
 .overlay-links a{
@@ -401,12 +407,13 @@ body{
 
 .separator{
     position: relative;
+    width: calc(100% - 130px);
+    margin: 0 auto;
     height:1px;
     border-top:2px dashed rgba(255,255,255,.8);
     z-index: 3;
     transform:scaleX(0);
     transform-origin:left;
-
     animation:drawLine .4s ease forwards;
 }
 
