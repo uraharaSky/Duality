@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import JourneyRail from "./components/JourneyRail";
 import "./styles/global.css";
 
 function App() {
@@ -66,17 +67,18 @@ function App() {
 
         <div className="main-container">
 
+            {/* JOURNEY RAIL */}
+            <JourneyRail />
+
             {/* LEFT SECTION */}
             <div className="left-section">
 
                 {/* BACKGROUND PANELS */}
                 <div className="panels">
 
-                    <div className="panel"></div>
-                    <div className="panel"></div>
-                    <div className="panel"></div>
-                    <div className="panel"></div>
-                    <div className="panel"></div>
+                    {Array.from({ length: 8 }).map((_, i) => (
+                        <div className="panel" key={i}></div>
+                    ))}
 
                 </div>
 
@@ -86,16 +88,11 @@ function App() {
                     {/* LOGO */}
                     <div className="logo-container">
 
-                        <div className="logo-blobs">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-
-                        <h1 className="logo pixel-font">
-                            Duality
-                        </h1>
+                        <img
+                            src="/assets/icons/duality-logo.svg"
+                            alt="Duality"
+                            className="duality-logo"
+                        />
 
                     </div>
 
@@ -115,8 +112,8 @@ function App() {
                         </h1>
 
                         <p className="description">
-                            I build systems that think,
-                            adapt, and understand people.
+                            I build humane AI grounded in psychology and behavioral understanding.
+                            Focused on creating systems that better understand people across finance and tech.
                         </p>
 
                         {/* BUTTONS */}
@@ -126,8 +123,13 @@ function App() {
                                 → My Résumé
                             </button>
 
-                            <button>
-                                → Explore
+                            <button className="meow-button">
+                                → Meow
+                                <img
+                                    src="/assets/icons/paw-icon.svg"
+                                    alt="paw"
+                                    className="paw-icon"
+                                />
                             </button>
 
                         </div>
@@ -149,7 +151,7 @@ function App() {
 
                 </div>
 
-                {/* CENTER TEXT */}
+                {/* PORTAL TEXT */}
                 <div className="portal-text pixel-font">
                     About me ↗
                 </div>
