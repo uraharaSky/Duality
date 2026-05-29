@@ -4,6 +4,8 @@ import "./styles/global.css";
 
 function App() {
 
+    const [menuOpen, setMenuOpen] = useState(false);
+
     const greetings = [
         "bonjour",
         "hola",
@@ -144,11 +146,12 @@ function App() {
             <div className="right-section">
 
                 {/* MENU BUTTON */}
-                <div className="menu-button">
-
+                <div
+                    className="menu-button"
+                    onClick={() => setMenuOpen(true)}
+                >
                     <div></div>
                     <div></div>
-
                 </div>
 
                 {/* PORTAL TEXT */}
@@ -157,6 +160,52 @@ function App() {
                 </div>
 
             </div>
+            {menuOpen && (
+
+                <div className="menu-overlay">
+
+                    <div
+                        className="close-button"
+                        onClick={() => setMenuOpen(false)}
+                    >
+                        ✕
+                    </div>
+
+                    <div className="overlay-header">
+                        Code by Akash
+                    </div>
+
+                    <div className="overlay-links">
+
+                        <div className="menu-item">
+                            <a href="#about">About Me</a>
+
+                        </div>
+                        <div className="separator"></div>
+
+                        <div className="menu-item">
+                            <a href="#products">Products</a>
+                        </div>
+                        <div className="separator"></div>
+
+                        <div className="menu-item">
+                            <a href="#projects">Projects</a>
+                        </div>
+                        <div className="separator"></div>
+
+                        <div className="menu-item">
+                            <a href="#blogs">Blogs</a>
+                        </div>
+                        <div className="separator"></div>
+
+                        <div className="menu-item">
+                            <a href="#contact">Contact</a>
+                        </div>
+
+                    </div>
+
+                </div>
+            )}
 
         </div>
 
