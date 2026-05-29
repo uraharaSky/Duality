@@ -146,13 +146,12 @@ function App() {
             <div className="right-section">
 
                 {/* MENU BUTTON */}
-                <div
-                    className="menu-button"
+                <button
+                    className="menu-toggle pixel-font"
                     onClick={() => setMenuOpen(true)}
                 >
-                    <div></div>
-                    <div></div>
-                </div>
+                    [ MENU ]
+                </button>
 
                 {/* PORTAL TEXT */}
                 <div className="portal-text pixel-font">
@@ -164,12 +163,12 @@ function App() {
 
                 <div className="menu-overlay">
 
-                    <div
-                        className="close-button"
+                    <button
+                        className="close-toggle pixel-font"
                         onClick={() => setMenuOpen(false)}
                     >
-                        ✕
-                    </div>
+                        [ CLOSE ]
+                    </button>
 
                     <div className="overlay-header">
                         Code by Akash
