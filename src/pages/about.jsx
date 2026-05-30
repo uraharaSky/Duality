@@ -60,9 +60,49 @@ export default function About() {
 
                 <section className="philosophy-section">
 
-                    <h2 className="section-heading pixel-font">
+                    <h2 className="section-heading-pixel-font">
                         My Philosophy
                     </h2>
+
+                    <div className="philosophy-grid">
+
+                        <div className="philosphy-card">
+                            <div className="card-visual"></div>
+                            <h3 className="card-pixel-font">Build</h3>
+                            <p className="card-description">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            </p>
+                        </div>
+
+                        <div className="philosphy-card">
+                            <div className="card-visual"></div>
+                            <h3 className="card-pixel-font">Simulate</h3>
+                            <p className="card-description">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            </p>
+                        </div>
+
+                        <div className="philosphy-card">
+                            <div className="card-visual"></div>
+                            <h3 className="card-pixel-font">Reflect</h3>
+                            <p className="card-description">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            </p>
+                        </div>
+
+                        <div className="philosphy-card">
+                            <div className="card-visual"></div>
+                            <h3 className="card-pixel-font">Connect</h3>
+                            <p className="card-description">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            </p>
+                        </div>
+
+                    </div>
 
                 </section>
 

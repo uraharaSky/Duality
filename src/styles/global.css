@@ -15,13 +15,18 @@
 
 html{
     font-size:16px;
+    scrollbar-width: none;
 }
 
 body{
-    overflow:hidden;
+    overflow-x:hidden;
     background:#2D2A63;
     color:white;
     font-family:sans-serif;
+    scrollbar-width: none;
+}
+body::-webkit-scrollbar {
+    display: none;
 }
 
 /* FONT */
@@ -298,17 +303,27 @@ body{
 
 /* PORTAL TEXT */
 
-.portal-text{
-    position:absolute;
+.portal-text,
+.portal-text:visited,
+.portal-text:hover,
+.portal-text:active {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: clamp(42px, 3vw, 72px);
+    white-space: nowrap;
+    color: white;
+    text-decoration: none;
 
-    top:50%;
-    left:50%;
+    transition:
+            letter-spacing 0.3s ease,
+            transform 0.3s ease;
+}
 
-    transform:translate(-50%, -50%);
-
-    font-size:clamp(42px, 3vw, 72px);
-
-    white-space:nowrap;
+.portal-text:hover {
+    letter-spacing: 3px;
+    transform: translate(-50%, -50%) translateX(8px);
 }
 
 /* TYPEWRITER */
@@ -376,7 +391,7 @@ body{
 
 .overlay-header{
     font-family: "Duality";
-    font-size: 10px;
+    font-size: 12px;
     color: white;
     padding-top: clamp(1.5rem, 4vw, 3rem);
     padding-left: clamp(1.5rem, 4vw, 3rem);
@@ -409,18 +424,7 @@ body{
     opacity: 0.8;
 }
 
-.close-button{
-    position: absolute;
 
-    top: 40px;
-    right: 50px;
-
-    font-size: 40px;
-
-    cursor: pointer;
-
-    color: white;
-}
 
 @keyframes menuFade{
 

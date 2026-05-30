@@ -49,18 +49,95 @@
     transform: translateX(-4px);
 }
 
-.about-section {
-    padding: 80px 64px 140px;
+.about-content{
+    width: min(100%, 1000px);
+    margin: 0 auto;
+    padding: 0 32px;
+    box-sizing: border-box;
 }
 
-.about-title {
-    font-size: clamp(64px, 6vw, 110px);
+.about-content section{
+    margin-bottom: 140px;
+}
+
+.section-title{
+    font-size: clamp(2.5rem, 4vw, 4rem);
+    margin-bottom: 60px;
+}
+
+.card-visual{
+    width:100%;
+    height:200px;
+    background:#d8d8d8;
+    border-radius:8px;
+    margin-bottom:24px;
+}
+
+/*{--------------------------------------About Me--------------------------------------------------------}*/
+.about-intro{
+    margin-top: 80px;
+    margin-bottom: 140px;
+}
+
+.about-title{
+    font-size: clamp(1.5rem, 6vw, 3rem);
+    margin-bottom: 60px;
+}
+
+.about-copy{
+    max-width: 710px;
+    font-family: "Duality";
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    color: white;
+    margin-left: clamp(1.5rem, 4vw, 4rem);
+}
+
+/*{--------------------------------------My philosophy--------------------------------------------------------}*/
+
+.section-heading-pixel-font{
+    font-size: clamp(0.7rem, 4vw, 2rem);
+    font-family: "Duality";
+}
+
+.philosophy-section{
+    margin-bottom: 180px;
+}
+
+.section-title{
+    font-size: clamp(2.5rem, 4vw, 4rem);
     margin-bottom: 80px;
 }
 
-.about-copy {
-    max-width: 700px;
+.philosophy-grid{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap:80px;
+    padding: 80px 56px;
+}
 
-    font-size: 20px;
-    line-height: 1.9;
+.philosophy-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.philosophy-card h3{
+    font-size:1.5rem;
+    text-align: center;
+    background: red;
+
+}
+
+.card-pixel-font{
+    font-size:1.5rem;
+    text-align: center;
+    font-family: "Duality";
+}
+
+.card-description{
+    font-size:clamp(0.4rem, 4vw, 1rem);
+    text-align: left;
+    font-family: "Duality";
+    padding: clamp(0.5rem, 4vw, 1rem);
 }
