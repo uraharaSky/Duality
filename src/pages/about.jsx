@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 
 // Animations for Cards
 import BuildCardAnimation from "../animations/buildCardAnimation";
+import SimulateCardAnimation from "../animations/simulateCardAnimation";
+
 export default function About() {
 
     const navigate = useNavigate();
@@ -74,17 +76,21 @@ export default function About() {
                             </div>
                             <h3 className="card-pixel-font">Build</h3>
                             <p className="card-description">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                I don’t just code to solve.
+                                I build to reveal what’s missing in design, in empathy, in focus.
+                                Every feature should feel like it always belonged.
                             </p>
                         </div>
 
                         <div className="philosphy-card">
-                            <div className="card-visual"></div>
+                            <div className="card-visual">
+                                <SimulateCardAnimation />
+                            </div>
                             <h3 className="card-pixel-font">Simulate</h3>
                             <p className="card-description">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                A graph isn’t just data, it’s  a whisper.
+                                Behind every curve is a human story, a behavior asking to be understood.
+                                I model with curiosity first, accuracy next.
                             </p>
                         </div>
 
