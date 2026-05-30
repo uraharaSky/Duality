@@ -1,0 +1,66 @@
+:root {
+    --page-padding: 48px;
+}
+
+
+.about-page {
+    min-height: 100vh;
+    background: #fb6a6a;
+    color: white;
+}
+
+.about-topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 48px 64px;
+}
+
+.about-header {
+    font-family: "Duality";
+    font-size: 12px;
+    color: white;
+    padding-left: calc(var(--page-padding) - 12px);
+}
+
+.close-toggle-light{
+    position: static;
+
+    background: none;
+    border: none;
+
+    font-family: "Duality";
+    font-size: 1rem;
+
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+.close-toggle-light:hover {
+    color: #2f2d6d;
+}
+
+/*.close-toggle:hover{*/
+/*    color: #ff6b6b;*/
+/*    letter-spacing: 2px;*/
+/*}*/
+
+.close-toggle:hover{
+    transform: translateX(-4px);
+}
+
+.about-section {
+    padding: 80px 64px 140px;
+}
+
+.about-title {
+    font-size: clamp(64px, 6vw, 110px);
+    margin-bottom: 80px;
+}
+
+.about-copy {
+    max-width: 700px;
+
+    font-size: 20px;
+    line-height: 1.9;
+}
