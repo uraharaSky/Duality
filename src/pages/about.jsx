@@ -1,6 +1,8 @@
 import "../styles/about.css";
 import { useNavigate } from "react-router-dom";
 
+// Animations for Cards
+import BuildCardAnimation from "../animations/buildCardAnimation";
 export default function About() {
 
     const navigate = useNavigate();
@@ -67,7 +69,9 @@ export default function About() {
                     <div className="philosophy-grid">
 
                         <div className="philosphy-card">
-                            <div className="card-visual"></div>
+                            <div className="card-visual">
+                                <BuildCardAnimation />
+                            </div>
                             <h3 className="card-pixel-font">Build</h3>
                             <p className="card-description">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
