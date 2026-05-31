@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 // Animations for Cards
 import BuildCardAnimation from "../animations/buildCardAnimation";
 import SimulateCardAnimation from "../animations/simulateCardAnimation";
+import ConnectCardAnimation from "../animations/connectCardAnimation";
 
 export default function About() {
 
@@ -104,7 +105,9 @@ export default function About() {
                         </div>
 
                         <div className="philosphy-card">
-                            <div className="card-visual"></div>
+                            <div className="card-visual">
+                                <ConnectCardAnimation />
+                            </div>
                             <h3 className="card-pixel-font">Connect</h3>
                             <p className="card-description">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
