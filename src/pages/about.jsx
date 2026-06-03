@@ -113,9 +113,6 @@ export default function About() {
     }, []);
 
 
-
-
-
     return (
 
         <div className="about-page"
@@ -366,9 +363,39 @@ export default function About() {
 
                 <section className="final-section">
 
-                    <h2 className="section-heading pixel-font">
-                        If you're still reading ...
-                    </h2>
+                        <h2 className="final-section-heading-pixel-font">
+                            If you're still reading ...
+                        </h2>
+
+                        <div className="final-message-content">
+
+                            <p>
+                                Most people don't scroll this far.
+                            </p>
+
+                            <p>
+                                And yet, here you are.
+                            </p>
+
+                            <p>
+                                This page wasn't built for everyone.
+                            </p>
+
+                            <p>
+                                It was built for the few who slow down.
+                                Who overthink.
+                                Who stay.
+                            </p>
+
+                            <p>
+                                If that's you — I hope something here felt like home.
+                            </p>
+
+                        </div>
+
+                        <button className="final-cta-btn pixel-font">
+                            See What I've Been Building
+                        </button>
 
                 </section>
 

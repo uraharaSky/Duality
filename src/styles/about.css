@@ -273,3 +273,70 @@
 
     opacity: 1;
 }
+
+.final-message-section{
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    gap: 3rem;
+
+    padding: 4rem 2rem;
+}
+
+.final-message-heading{
+    font-size: clamp(2rem, 5vw, 4rem);
+}
+
+.final-message-content{
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+    font-family: "Duality";
+    margin-top: 1.2rem;
+}
+
+.final-cta-btn{
+    border: none;
+    padding: 1rem 3rem;
+    background: rgba(30,30,60,0.6);
+    margin: clamp(0.5rem, 4vw, 4rem);
+
+    color: white;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    transition: all .3s ease;
+}
+
+.final-cta-btn:hover{
+    transform: translateY(-2px);
+
+    background: rgba(30,30,60,0.8);
+}
+
+.final-section-heading-pixel-font{
+    font-family:"Duality" ;
+}
+
+.final-section{
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
