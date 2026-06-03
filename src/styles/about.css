@@ -103,9 +103,9 @@
     font-family: "Duality";
 }
 
-.philosophy-section{
-    margin-bottom: 180px;
-}
+/*.philosophy-section{*/
+/*    margin-bottom: 10px;*/
+/*}*/
 
 .section-title{
     font-size: clamp(2.5rem, 4vw, 4rem);
@@ -150,3 +150,35 @@
     height:100%;
 }
 
+.search-block{
+    position: relative;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.quote-mark-opening{
+    font-family: "Duality";
+    font-size: clamp(2rem, 6vw, 5rem);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-60%, -40%);
+}
+
+.quote-mark-closing{
+    font-family: "Duality";
+    font-size: clamp(2rem, 6vw, 5rem);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    transform: translate(60%, 40%);
+
+}
+
+.quote-container{
+    font-size: clamp(0.4rem, 4vw, 1rem);
+    text-align: left;
+    font-family: "Duality";
+    padding: clamp(2rem, 4vw, 4rem);
+    line-height: clamp(2.5rem, 4vw, 4rem);
+}
