@@ -182,3 +182,26 @@
     padding: clamp(2rem, 4vw, 4rem);
     line-height: clamp(2.5rem, 4vw, 4rem);
 }
+
+.footnote-item{
+    margin-bottom: 2rem;
+}
+
+.footnote-number{
+    font-family: "Duality";
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.footnote-text{
+    font-family: "Duality";
+    margin-left: 2rem;
+}
+
+.footnote-container{
+    font-size: clamp(0.4rem, 4vw, 1rem);
+    text-align: left;
+    margin: clamp(4rem, 4vw, 6rem);
+    line-height: clamp(2.5rem, 4vw, 4rem);
+
+}

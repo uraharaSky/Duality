@@ -20,6 +20,50 @@ export default function About() {
         "I'm not here to outwork everyone.",
         "I just want to understand what I'm building and why it matters."
     ];
+    const footnotes = [
+        "I always write better at night.",
+        "I care too much about things that don't look like work.",
+        "I sketch my thoughts before I write them.",
+        "If my project doesn't feel like a story, I lose interest.",
+        "Duality isn't a glitch. It's design."
+    ];
+
+    const containerVariants = {
+        hidden: {},
+        visible: {
+            transition: {
+                staggerChildren: 0.8
+            }
+        }
+    };
+    const footnoteVariants = {
+        hidden: {},
+        visible: {
+            transition: {
+                staggerChildren: 0.3
+            }
+        }
+    };
+    const numberVariants = {
+        hidden: {
+            opacity: 0,
+            x: -15
+        },
+        visible: {
+            opacity: 1,
+            x: 0
+        }
+    };
+    const textVariants = {
+        hidden: {
+            opacity: 0,
+            y: 10
+        },
+        visible: {
+            opacity: 1,
+            y: 0
+        }
+    };
 
     return (
 
@@ -232,6 +276,35 @@ export default function About() {
                         My Footnotes
                     </h2>
 
+                    <motion.div
+                        className="footnotes-container"
+                        variants={containerVariants}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, amount: 0.2 }}
+                    >
+                        {footnotes.map((note, index) => (
+                            <motion.div
+                                key={index}
+                                className="footnote-item"
+                                variants={footnoteVariants}
+                            >
+                                <motion.div
+                                    className="footnote-number"
+                                    variants={numberVariants}
+                                >
+                                    {String(index + 1).padStart(2, "0")}
+                                </motion.div>
+
+                                <motion.p
+                                    className="footnote-text"
+                                    variants={textVariants}
+                                >
+                                    {note}
+                                </motion.p>
+                            </motion.div>
+                        ))}
+                    </motion.div>
                 </section>
 
                 {/*{Final section}*/}
