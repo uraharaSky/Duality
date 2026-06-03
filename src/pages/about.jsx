@@ -1,6 +1,7 @@
 import "../styles/about.css";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import { useState, useEffect, useRef } from "react";
 
 // Animations for Cards
 import BuildCardAnimation from "../animations/buildCardAnimation";
@@ -65,9 +66,35 @@ export default function About() {
         }
     };
 
+    const [mousePosition, setMousePosition] = useState({
+        x: 0,
+        y: 0
+    });
+
+    const handleMouseMove = (e) => {
+        const rect = e.currentTarget.getBoundingClientRect();
+
+        setMousePosition({
+            x: e.clientX - rect.left,
+            y: e.clientY - rect.top
+        });
+    };
+
     return (
 
-        <div className="about-page">
+        <div className="about-page"
+             onMouseMove={handleMouseMove}
+        >
+
+            <div className="coral-grid-overlay" />
+
+            <div
+                className="grid-glow"
+                style={{
+                    left: `${mousePosition.x}px`,
+                    top: `${mousePosition.y}px`
+                }}
+            />
 
             {/* TOP BAR */}
 
