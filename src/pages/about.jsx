@@ -72,13 +72,49 @@ export default function About() {
     });
 
     const handleMouseMove = (e) => {
+
         const rect = e.currentTarget.getBoundingClientRect();
 
-        setMousePosition({
-            x: e.clientX - rect.left,
-            y: e.clientY - rect.top
-        });
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        setMousePosition({ x, y });
+
+        e.currentTarget.style.setProperty(
+            "--mouse-x",
+            `${x}px`
+        );
+
+        e.currentTarget.style.setProperty(
+            "--mouse-y",
+            `${y}px`
+        );
     };
+
+    const [showGlow, setShowGlow] = useState(true);
+
+    useEffect(() => {
+
+        const handleScroll = () => {
+            setShowGlow(false);
+
+            clearTimeout(window.scrollTimer);
+
+            window.scrollTimer = setTimeout(() => {
+                setShowGlow(true);
+            }, 150);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+
+        return () =>
+            window.removeEventListener("scroll", handleScroll);
+
+    }, []);
+
+
+
+
 
     return (
 
@@ -87,14 +123,6 @@ export default function About() {
         >
 
             <div className="coral-grid-overlay" />
-
-            <div
-                className="grid-glow"
-                style={{
-                    left: `${mousePosition.x}px`,
-                    top: `${mousePosition.y}px`
-                }}
-            />
 
             {/* TOP BAR */}
 

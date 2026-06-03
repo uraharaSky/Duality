@@ -2,6 +2,10 @@
     --page-padding: 48px;
 }
 
+.about-page{
+    --mouse-x: 50%;
+    --mouse-y: 50%;
+}
 
 .about-page {
     min-height: 100vh;
@@ -211,11 +215,10 @@
 
 }
 
+
 .coral-grid-overlay{
     position:absolute;
     inset:0;
-
-    pointer-events:none;
 
     background-image:
             linear-gradient(
@@ -233,27 +236,40 @@
     z-index:1;
 }
 
-.grid-glow{
+.coral-grid-overlay::after{
+    content: "";
+
     position: absolute;
-
-    width: 250px;
-    height: 250px;
-
-    border-radius: 50%;
-
-    transform: translate(-50%, -50%);
+    inset: 0;
 
     pointer-events: none;
 
-    z-index: 2;
-
-    background:
-            radial-gradient(
-                    circle,
-                    rgba(255,255,255,0.12) 0%,
-                    rgba(255,255,255,0.06) 35%,
-                    rgba(255,255,255,0.02) 55%,
-                    transparent 75%
+    background-image:
+            linear-gradient(
+                    rgba(255,255,255,0.45) 1px,
+                    transparent 1px
+            ),
+            linear-gradient(
+                    90deg,
+                    rgba(255,255,255,0.45) 1px,
+                    transparent 1px
             );
-}
 
+    background-size: 40px 40px;
+
+    mask:
+            radial-gradient(
+                    circle 250px at var(--mouse-x) var(--mouse-y),
+                    black,
+                    transparent
+            );
+
+    -webkit-mask:
+            radial-gradient(
+                    circle 250px at var(--mouse-x) var(--mouse-y),
+                    black,
+                    transparent
+            );
+
+    opacity: 1;
+}
