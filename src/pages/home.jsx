@@ -20,6 +20,7 @@ function Home() {
     const [textIndex, setTextIndex] = useState(0);
     const [displayText, setDisplayText] = useState("");
     const [isDeleting, setIsDeleting] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
 
     useEffect(() => {
 
@@ -65,8 +66,22 @@ function Home() {
 
     }, [displayText, isDeleting, textIndex]);
 
+    useEffect(() => {
+
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 100);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+
+        return () =>
+            window.removeEventListener("scroll", handleScroll);
+
+    }, []);
+
     return (
 
+        <>
         <div className="main-container">
 
             {/* JOURNEY RAIL */}
@@ -93,7 +108,9 @@ function Home() {
                         <img
                             src="/assets/icons/duality-logo.svg"
                             alt="Duality"
-                            className="duality-logo"
+                            className={`duality-logo ${
+                                scrolled ? "scrolled" : ""
+                            }`}
                         />
 
                     </div>
@@ -218,7 +235,71 @@ function Home() {
 
         </div>
 
+    {/* PRODUCTS SECTION */}
+        <section id="products" className="products-section">
+
+            <div className="products-left">
+
+                <h2 className="products-title pixel-font">
+                    Products
+                </h2>
+
+
+
+                <div className="product-tabs">
+                    <button>Scen0</button>
+                    <button>Ally</button>
+                    <button>FinSage</button>
+                    <button>Orion</button>
+                    <button>Hermit</button>
+                </div>
+
+                <div className="product-stack">
+
+                    <div className="stack-card back-2"></div>
+                    <div className="stack-card back-1"></div>
+                    <div className="stack-card front"></div>
+
+                </div>
+
+            </div>
+
+            <div className="products-right">
+
+                <div className="divider-group">
+
+                    <div className="divider divider-dashed"></div>
+                    <div className="divider divider-solid"></div>
+
+                </div>
+
+                <div className="products-copy pixel-font">
+
+                    <span>Products ↗</span>
+
+                    <span>shaped by</span>
+
+                    <span>human</span>
+
+                    <span>behavior</span>
+
+                </div>
+
+            </div>
+
+            <div className="vertical-divider"></div>
+
+            <div className="products-copy">
+                Products ↗
+            </div>
+
+    </section>
+
+    </>
     );
+
+
+
 
 }
 
