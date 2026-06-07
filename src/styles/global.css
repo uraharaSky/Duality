@@ -40,6 +40,8 @@ body::-webkit-scrollbar {
             sans-serif;
 }
 
+
+
 /* MAIN LAYOUT */
 
 .main-container{
@@ -57,7 +59,7 @@ body::-webkit-scrollbar {
     width:var(--split-position);
     height:100%;
 
-    background:#2D2A63;
+    background:transparent;
 
     position:relative;
     overflow:hidden;
@@ -74,16 +76,21 @@ body::-webkit-scrollbar {
     position:relative;
 }
 
+.site-wrapper{
+    position:relative;
+}
+
 /* PANELS */
 
 .panels{
     position:absolute;
     inset:0;
     display:flex;
-    justify-content:center;
+    justify-content:start;
     gap:18px;
     padding:0 30px;
-    padding-left: 60px;
+    padding-left: 120px;
+    width:var(--split-position);
 }
 
 .panel{
@@ -91,52 +98,75 @@ body::-webkit-scrollbar {
     min-width: 60px;
     max-width: 80px;
     height:100%;
-    border:1px solid rgba(255, 107, 107, 0.15);
-    background:rgba(255, 107, 107, 0.025);
-    box-shadow:
-            0 0 10px rgba(255,107,107,0.04);
-    border-radius:10px;
+    border:1px solid rgba(255,107,107,0.15);
+    background:rgba(255,107,107,0.03);
+    box-shadow:0 0 10px rgba(255,107,107,0.04);
+    justify-content:start;
+    border-radius: 10px;
+
 
 }
-/*Journey Rail*/
-.journey-rail{
-    position:fixed;
+
+.site-panels{
+    position:absolute;
     top:0;
-    bottom:0;
-    /*left:calc(var(--split-position) - 32px);*/
-    left:calc(var(--split-position) - 14px);
+    left:0;
+    width:var(--split-position);
+    height:100%;
     display:flex;
-    gap:20px;
-    z-index:20;
+    justify-content:center;
+    gap:18px;
+    padding:0 30px;
+    padding-left:60px;
     pointer-events:none;
 }
 
-.rail{
-    width:2.5px;
-    height:100vh;
+.main-container,
+.products-section{
+    position:relative;
+    z-index:1;
 }
 
-.rail-blue{
-    background:
-            repeating-linear-gradient(
-                    to bottom,
-                    #2D2A63 0px,
-                    #2D2A63 14px,
-                    transparent 14px,
-                    transparent 28px
-            );
-}
 
-.rail-coral{
-    background:
-            repeating-linear-gradient(
-                    to bottom,
-                    #FF6B6B 0px,
-                    #FF6B6B 14px,
-                    transparent 14px,
-                    transparent 28px
-            );
-}
+/*Journey Rail*/
+/*.journey-rail{*/
+/*    position:fixed;*/
+/*    top:0;*/
+/*    bottom:0;*/
+/*    !*left:calc(var(--split-position) - 32px);*!*/
+/*    left:calc(var(--split-position) - 14px);*/
+/*    display:flex;*/
+/*    gap:20px;*/
+/*    z-index:20;*/
+/*    pointer-events:none;*/
+/*}*/
+
+/*.rail{*/
+/*    width:2.5px;*/
+/*    height:100vh;*/
+/*}*/
+
+/*.rail-blue{*/
+/*    background:*/
+/*            repeating-linear-gradient(*/
+/*                    to bottom,*/
+/*                    #2D2A63 0px,*/
+/*                    #2D2A63 14px,*/
+/*                    transparent 14px,*/
+/*                    transparent 28px*/
+/*            );*/
+/*}*/
+
+/*.rail-coral{*/
+/*    background:*/
+/*            repeating-linear-gradient(*/
+/*                    to bottom,*/
+/*                    #FF6B6B 0px,*/
+/*                    #FF6B6B 14px,*/
+/*                    transparent 14px,*/
+/*                    transparent 28px*/
+/*            );*/
+/*}*/
 
 
 /* CONTENT */
@@ -471,7 +501,7 @@ body::-webkit-scrollbar {
     display:grid;
     grid-template-columns:69% 31%;
 
-    background:#2D2A63;
+    background:transparent;
 }
 
 .products-left{
@@ -484,7 +514,7 @@ body::-webkit-scrollbar {
 .products-right{
     position:relative;
 
-    background:#ff7070;
+    background:#ff6b6b;
 
     display:flex;
     align-items:center;
