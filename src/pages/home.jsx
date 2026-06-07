@@ -80,221 +80,223 @@ function Home() {
     }, []);
 
     return (
+    <>
+         <div className = "site-wrapper">
+             {/* BACKGROUND PANELS */}
+             <div className="panels">
 
-        <>
-        <div className="main-container">
+                 {Array.from({ length: 8 }).map((_, i) => (
+                     <div className="panel" key={i}></div>
+                 ))}
 
-            {/* JOURNEY RAIL */}
-            <JourneyRail />
+             </div>
 
-            {/* LEFT SECTION */}
-            <div className="left-section">
 
-                {/* BACKGROUND PANELS */}
-                <div className="panels">
+             <div className="main-container">
 
-                    {Array.from({ length: 8 }).map((_, i) => (
-                        <div className="panel" key={i}></div>
-                    ))}
+                 {/* JOURNEY RAIL */}
+                 <JourneyRail />
 
-                </div>
+                 {/* LEFT SECTION */}
+                 <div className="left-section">
 
-                {/* CONTENT */}
-                <div className="content">
 
-                    {/* LOGO */}
-                    <div className="logo-container">
+                     {/* CONTENT */}
+                     <div className="content">
 
-                        <img
-                            src="/assets/icons/duality-logo.svg"
-                            alt="Duality"
-                            className={`duality-logo ${
-                                scrolled ? "scrolled" : ""
-                            }`}
-                        />
+                         {/* LOGO */}
+                         <div className="logo-container">
 
-                    </div>
+                             <img
+                                 src="/assets/icons/duality-logo.svg"
+                                 alt="Duality"
+                                 className={`duality-logo ${
+                                     scrolled ? "scrolled" : ""
+                                 }`}
+                             />
 
-                    {/* HERO */}
-                    <div className="hero-section">
-
-                        <h2 className="pixel-font typewriter greeting">
-                            {displayText}
-                        </h2>
-
-                        <h2 className="pixel-font greeting">
-                            I’m
-                        </h2>
-
-                        <h1 className="pixel-font title">
-                            AKASH BISWAL
-                        </h1>
-
-                        <p className="description">
-                            I build humane AI grounded in psychology and behavioral understanding.
-                            Focused on creating systems that better understand people across finance and tech.
-                        </p>
+                         </div>
 
-                        {/* BUTTONS */}
-                        <div className="buttons">
+                         {/* HERO */}
+                         <div className="hero-section">
 
-                            <button>
-                                → My Résumé
-                            </button>
+                             <h2 className="pixel-font typewriter greeting">
+                                 {displayText}
+                             </h2>
 
-                            <button className="meow-button">
-                                → Meow
-                                <img
-                                    src="/assets/icons/paw-icon.svg"
-                                    alt="paw"
-                                    className="paw-icon"
-                                />
-                            </button>
+                             <h2 className="pixel-font greeting">
+                                 I’m
+                             </h2>
 
-                        </div>
+                             <h1 className="pixel-font title">
+                                 AKASH BISWAL
+                             </h1>
 
-                    </div>
+                             <p className="description">
+                                 I build humane AI grounded in psychology and behavioral understanding.
+                                 Focused on creating systems that better understand people across finance and tech.
+                             </p>
 
-                </div>
+                             {/* BUTTONS */}
+                             <div className="buttons">
 
-            </div>
+                                 <button>
+                                     → My Résumé
+                                 </button>
 
-            {/* RIGHT SECTION */}
-            <div className="right-section">
+                                 <button className="meow-button">
+                                     → Meow
+                                     <img
+                                         src="/assets/icons/paw-icon.svg"
+                                         alt="paw"
+                                         className="paw-icon"
+                                     />
+                                 </button>
 
-                {/* MENU BUTTON */}
-                <button
-                    className="menu-toggle pixel-font"
-                    onClick={() => setMenuOpen(true)}
-                >
-                    [ MENU ]
-                </button>
+                             </div>
 
-                {/* PORTAL TEXT */}
-                <Link
-                    to="/about"
-                    className="portal-text pixel-font"
-                >
-                    About me ↗
-                </Link>
+                         </div>
 
-            </div>
-            {menuOpen && (
+                     </div>
 
-                <div className="menu-overlay">
+                 </div>
 
-                    <button
-                        className="close-toggle pixel-font"
-                        onClick={() => setMenuOpen(false)}
-                    >
-                        [ CLOSE ]
-                    </button>
+                 {/* RIGHT SECTION */}
+                 <div className="right-section">
 
-                    <div className="overlay-header">
-                        Code by Akash
-                    </div>
+                     {/* MENU BUTTON */}
+                     <button
+                         className="menu-toggle pixel-font"
+                         onClick={() => setMenuOpen(true)}
+                     >
+                         [ MENU ]
+                     </button>
 
-                    <div className="overlay-links">
+                     {/* PORTAL TEXT */}
+                     <Link
+                         to="/about"
+                         className="portal-text pixel-font"
+                     >
+                         About me ↗
+                     </Link>
 
-                        <div className="menu-item">
-                            <div className="menu-item">
-                                <Link
-                                    to="/about"
-                                    onClick={() => setMenuOpen(false)}
-                                >
-                                    About Me
-                                </Link>
-                            </div>
+                 </div>
+                 {menuOpen && (
 
-                        </div>
-                        <div className="separator"></div>
+                     <div className="menu-overlay">
 
-                        <div className="menu-item">
-                            <a href="#products">Products</a>
-                        </div>
-                        <div className="separator"></div>
+                         <button
+                             className="close-toggle pixel-font"
+                             onClick={() => setMenuOpen(false)}
+                         >
+                             [ CLOSE ]
+                         </button>
 
-                        <div className="menu-item">
-                            <a href="#projects">Projects</a>
-                        </div>
-                        <div className="separator"></div>
+                         <div className="overlay-header">
+                             Code by Akash
+                         </div>
 
-                        <div className="menu-item">
-                            <a href="#blogs">Blogs</a>
-                        </div>
-                        <div className="separator"></div>
+                         <div className="overlay-links">
 
-                        <div className="menu-item">
-                            <a href="#contact">Contact</a>
-                        </div>
+                             <div className="menu-item">
+                                 <div className="menu-item">
+                                     <Link
+                                         to="/about"
+                                         onClick={() => setMenuOpen(false)}
+                                     >
+                                         About Me
+                                     </Link>
+                                 </div>
 
-                    </div>
+                             </div>
+                             <div className="separator"></div>
 
-                </div>
-            )}
+                             <div className="menu-item">
+                                 <a href="#products">Products</a>
+                             </div>
+                             <div className="separator"></div>
 
-        </div>
+                             <div className="menu-item">
+                                 <a href="#projects">Projects</a>
+                             </div>
+                             <div className="separator"></div>
 
-    {/* PRODUCTS SECTION */}
-        <section id="products" className="products-section">
+                             <div className="menu-item">
+                                 <a href="#blogs">Blogs</a>
+                             </div>
+                             <div className="separator"></div>
 
-            <div className="products-left">
+                             <div className="menu-item">
+                                 <a href="#contact">Contact</a>
+                             </div>
 
-                <h2 className="products-title pixel-font">
-                    Products
-                </h2>
+                         </div>
 
+                     </div>
+                 )}
 
+             </div>
 
-                <div className="product-tabs">
-                    <button>Scen0</button>
-                    <button>Ally</button>
-                    <button>FinSage</button>
-                    <button>Orion</button>
-                    <button>Hermit</button>
-                </div>
+             {/* PRODUCTS SECTION */}
+             <section id="products" className="products-section">
 
-                <div className="product-stack">
+                 <div className="products-left">
 
-                    <div className="stack-card back-2"></div>
-                    <div className="stack-card back-1"></div>
-                    <div className="stack-card front"></div>
+                     <h2 className="products-title pixel-font">
+                         Products
+                     </h2>
 
-                </div>
 
-            </div>
 
-            <div className="products-right">
+                     <div className="product-tabs">
+                         <button>Scen0</button>
+                         <button>Ally</button>
+                         <button>FinSage</button>
+                         <button>Orion</button>
+                         <button>Hermit</button>
+                     </div>
 
-                <div className="divider-group">
+                     <div className="product-stack">
 
-                    <div className="divider divider-dashed"></div>
-                    <div className="divider divider-solid"></div>
+                         <div className="stack-card back-2"></div>
+                         <div className="stack-card back-1"></div>
+                         <div className="stack-card front"></div>
 
-                </div>
+                     </div>
 
-                <div className="products-copy pixel-font">
+                 </div>
 
-                    <span>Products ↗</span>
+                 <div className="products-right">
 
-                    <span>shaped by</span>
+                     <div className="divider-group">
 
-                    <span>human</span>
+                         <div className="divider divider-dashed"></div>
+                         <div className="divider divider-solid"></div>
 
-                    <span>behavior</span>
+                     </div>
 
-                </div>
+                     <div className="products-copy pixel-font">
 
-            </div>
+                         <span>Products ↗</span>
 
-            <div className="vertical-divider"></div>
+                         <span>shaped by</span>
 
-            <div className="products-copy">
-                Products ↗
-            </div>
+                         <span>human</span>
 
-    </section>
+                         <span>behavior</span>
 
+                     </div>
+
+                 </div>
+
+                 <div className="vertical-divider"></div>
+
+                 <div className="products-copy">
+                     Products ↗
+                 </div>
+
+             </section>
+         </div>
     </>
     );
 
