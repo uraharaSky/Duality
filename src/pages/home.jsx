@@ -91,6 +91,14 @@ function Home() {
 
              </div>
 
+             {/* MENU BUTTON */}
+             <button
+                 className="menu-toggle pixel-font"
+                 onClick={() => setMenuOpen(true)}
+             >
+                 [ MENU ]
+             </button>
+
 
              <div className="main-container">
 
@@ -164,13 +172,6 @@ function Home() {
                  {/* RIGHT SECTION */}
                  <div className="right-section">
 
-                     {/* MENU BUTTON */}
-                     <button
-                         className="menu-toggle pixel-font"
-                         onClick={() => setMenuOpen(true)}
-                     >
-                         [ MENU ]
-                     </button>
 
                      {/* PORTAL TEXT */}
                      <Link
