@@ -50,7 +50,7 @@ body::-webkit-scrollbar {
 
     display:flex;
 
-    overflow:hidden;
+    /*overflow:hidden;*/
 }
 
 /* LEFT SECTION */
@@ -107,19 +107,7 @@ body::-webkit-scrollbar {
 
 }
 
-.site-panels{
-    position:absolute;
-    top:0;
-    left:0;
-    width:var(--split-position);
-    height:100%;
-    display:flex;
-    justify-content:center;
-    gap:18px;
-    padding:0 30px;
-    padding-left:60px;
-    pointer-events:none;
-}
+
 
 .main-container,
 .products-section{
@@ -380,6 +368,8 @@ body::-webkit-scrollbar {
 }
 
 .menu-overlay{
+    height: 100vh;
+    width: 100vw;
     position: fixed;
     animation: menuFade 0.3s ease;
     inset: 0;

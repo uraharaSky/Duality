@@ -182,59 +182,6 @@ function Home() {
                      </Link>
 
                  </div>
-                 {menuOpen && (
-
-                     <div className="menu-overlay">
-
-                         <button
-                             className="close-toggle pixel-font"
-                             onClick={() => setMenuOpen(false)}
-                         >
-                             [ CLOSE ]
-                         </button>
-
-                         <div className="overlay-header">
-                             Code by Akash
-                         </div>
-
-                         <div className="overlay-links">
-
-                             <div className="menu-item">
-                                 <div className="menu-item">
-                                     <Link
-                                         to="/about"
-                                         onClick={() => setMenuOpen(false)}
-                                     >
-                                         About Me
-                                     </Link>
-                                 </div>
-
-                             </div>
-                             <div className="separator"></div>
-
-                             <div className="menu-item">
-                                 <a href="#products">Products</a>
-                             </div>
-                             <div className="separator"></div>
-
-                             <div className="menu-item">
-                                 <a href="#projects">Projects</a>
-                             </div>
-                             <div className="separator"></div>
-
-                             <div className="menu-item">
-                                 <a href="#blogs">Blogs</a>
-                             </div>
-                             <div className="separator"></div>
-
-                             <div className="menu-item">
-                                 <a href="#contact">Contact</a>
-                             </div>
-
-                         </div>
-
-                     </div>
-                 )}
 
              </div>
 
@@ -297,6 +244,60 @@ function Home() {
                  </div>
 
              </section>
+
+             {menuOpen && (
+
+                 <div className="menu-overlay">
+
+                     <button
+                         className="close-toggle pixel-font"
+                         onClick={() => setMenuOpen(false)}
+                     >
+                         [ CLOSE ]
+                     </button>
+
+                     <div className="overlay-header">
+                         Code by Akash
+                     </div>
+
+                     <div className="overlay-links">
+
+                         <div className="menu-item">
+                             <div className="menu-item">
+                                 <Link
+                                     to="/about"
+                                     onClick={() => setMenuOpen(false)}
+                                 >
+                                     About Me
+                                 </Link>
+                             </div>
+
+                         </div>
+                         <div className="separator"></div>
+
+                         <div className="menu-item">
+                             <a href="#products">Products</a>
+                         </div>
+                         <div className="separator"></div>
+
+                         <div className="menu-item">
+                             <a href="#projects">Projects</a>
+                         </div>
+                         <div className="separator"></div>
+
+                         <div className="menu-item">
+                             <a href="#blogs">Blogs</a>
+                         </div>
+                         <div className="separator"></div>
+
+                         <div className="menu-item">
+                             <a href="#contact">Contact</a>
+                         </div>
+
+                     </div>
+
+                 </div>
+             )}
          </div>
     </>
     );
