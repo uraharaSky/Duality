@@ -34,7 +34,7 @@
 .close-toggle-light{
     position: static;
 
-    background: none;
+    background: transparent;
     border: none;
 
     font-family: "Duality";
