@@ -9,7 +9,7 @@ function Products() {
 
             <div className="products-left">
 
-                <h2 className="products-title pixel-font">
+                <h2 className="products-title-pixel-font">
                     Products
                 </h2>
 

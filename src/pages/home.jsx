@@ -5,6 +5,7 @@ import "../styles/global.css";
 import { Link } from "react-router-dom";
 import MenuOverlay from "../components/menuOverlay.jsx";
 import Hero from "../components/hero.jsx";
+import ProductsCover from "../components/productsCover.jsx";
 
 function Home() {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -30,7 +31,8 @@ function Home() {
              </button>
 
              <Hero/>
-             <Products/>
+             <ProductsCover/>
+             {/*<Products/>*/}
              {menuOpen && (
                 <MenuOverlay
                     onClose={() => setMenuOpen(false)}

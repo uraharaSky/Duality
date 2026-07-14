@@ -1,5 +1,107 @@
+/* ==========================================PRODUCTS COVER========================================== */
+
+.products-cover{
+    height:100vh;
+
+    display:grid;
+    grid-template-columns:69% 31%;
+    overflow: visible;
+
+    position:relative;
+}
+
+/* ==========================================LEFT SIDE========================================== */
+
+.products-cover-left{
+    position:relative;
+
+    overflow:visible;
+
+    display:flex;
+    align-items:center;
+
+    padding-left:80px;
+}
+
+.products-cover-title{
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    transform:translate(-50%,-50%);
+    transform-origin:center center;
+
+    font-family:"Duality";
+    font-size:12rem;
+
+    color:white;
+
+    white-space:nowrap;
+
+    will-change:transform;
+
+    z-index:10;
+}
+
+.products-band{
+
+    position:absolute;
+
+    right:0;
+    top:62%;
+
+    width:0;
+
+    height:72px;
+
+    background:#FF6B6B;
+
+    border-radius:14px 0 0 14px;
+
+    z-index:5;
+}
+
+/* ==========================================TITLE========================================== */
+
+.products-title{
+    position:absolute;
+
+    left:60px;
+    top:25%;
+
+    transform:translateY(-50%);
+    font-family: "Duality";
+
+    font-size:16rem;
+
+    width:max-content;
+}
+
+/* ==========================================RIGHT PANEL========================================== */
+
+.products-cover-right{
+    background:#FF6B6B;
+    position:relative;
+}
+
+
+
+
+
+
+
+
+/*<------------------------------------------------------------------------------------------------------------------>*/
+
 .products-page{
     min-height:100vh;
+}
+
+.products-title-pixel-font{
+    font-size:clamp(28px, 4vw, 42px);
+    font-family: "Duality";
 }
 
 .products-section{
@@ -13,7 +115,7 @@
 
 .products-left{
     padding:4rem;
-
+    margin-left: 60px;
     display:flex;
     flex-direction:column;
 }
