@@ -10,6 +10,9 @@ function ProductsCover() {
 
     const coverRef = useRef(null);
     const titleRef = useRef(null);
+    const menuRef = useRef([]);
+    const bandRef = useRef(null);
+    // const menuAnimated = useRef(false);
 
     useEffect(() => {
 
@@ -26,12 +29,65 @@ function ProductsCover() {
                 }
             });
 
+
+// 1. Shrink PRODUCTS
             tl.to(titleRef.current, {
                 scale: 0.28,
                 x: -215,
-                y: -190,
+                y: -210,
                 ease: "none",
+                duration: 0.6
             });
+
+// 2. Grow Coral Band
+            tl.to(bandRef.current,{
+                scaleX:1,
+                ease:"none",
+                duration:0.6
+            });
+
+            tl.fromTo(
+                menuRef.current,
+                {
+                    opacity:0,
+                    y:12
+                },
+                {
+                    opacity:1,
+                    y:0,
+                    stagger:0.08,
+                    ease:"power3.out",
+                    duration:0.25
+                }
+            );
+
+            tl.to(bandRef.current, {
+                scaleX: 1,
+                ease: "power3.out",
+                duration: 0.4,
+
+                onComplete: () => {
+
+                    gsap.fromTo(
+                        menuRef.current,
+                        {
+                            opacity: 0,
+                            y: 12
+                        },
+                        {
+                            opacity: 1,
+                            y: 0,
+                            stagger: 0.1,
+                            duration: 0.35,
+                            ease: "power3.out"
+                        }
+                    );
+
+                }
+
+            }, "<");
+
+
 
         }, coverRef);
 
@@ -53,6 +109,49 @@ function ProductsCover() {
                 >
                     Products
                 </h1>
+
+                {/* Navigation Band */}
+                <div
+                    ref={bandRef}
+                    className="products-nav-band"
+                >
+
+                    <div className="products-nav">
+
+                        <button
+                            ref={el => menuRef.current[0] = el}
+                            className="active"
+                        >
+                            Scene0
+                        </button>
+
+                        <button
+                            ref={el => menuRef.current[1] = el}
+                        >
+                            Ally
+                        </button>
+
+                        <button
+                            ref={el => menuRef.current[2] = el}
+                        >
+                            FinSage
+                        </button>
+
+                        <button
+                            ref={el => menuRef.current[3] = el}
+                        >
+                            Orion
+                        </button>
+
+                        <button
+                            ref={el => menuRef.current[4] = el}
+                        >
+                            Hermit
+                        </button>
+
+                    </div>
+
+                </div>
 
             </div>
 
