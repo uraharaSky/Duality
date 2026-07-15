@@ -32,7 +32,7 @@ function Home() {
 
              <Hero/>
              <ProductsCover/>
-             {/*<Products/>*/}
+             <Products/>
              {menuOpen && (
                 <MenuOverlay
                     onClose={() => setMenuOpen(false)}

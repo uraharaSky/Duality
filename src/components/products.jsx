@@ -1,33 +1,43 @@
 import "../styles/products.css"
+import ProductCard from "./ProductCard";
+
+import { useState } from "react";
+import products from "../data/productsData";
 
 
 
 function Products() {
+
+    const [activeProduct, setActiveProduct] = useState(0);
+
+    const [deckOrder, setDeckOrder] = useState([
+        0,
+        1,
+        2
+    ]);
     return(
         /* PRODUCTS SECTION */
         <section id="products" className="products-section">
 
             <div className="products-left">
 
-                <h2 className="products-title-pixel-font">
-                    Products
-                </h2>
-
-
-
-                <div className="product-tabs">
-                    <button>Scen0</button>
-                    <button>Ally</button>
-                    <button>FinSage</button>
-                    <button>Orion</button>
-                    <button>Hermit</button>
-                </div>
 
                 <div className="product-stack">
 
-                    <div className="stack-card back-2"></div>
-                    <div className="stack-card back-1"></div>
-                    <div className="stack-card front"></div>
+                    <ProductCard
+                        product={products[2]}
+                        position="back-2"
+                    />
+
+                    <ProductCard
+                        product={products[1]}
+                        position="back-1"
+                    />
+
+                    <ProductCard
+                        product={products[0]}
+                        position="front"
+                    />
 
                 </div>
 
@@ -39,18 +49,6 @@ function Products() {
 
                     <div className="divider divider-dashed"></div>
                     <div className="divider divider-solid"></div>
-
-                </div>
-
-                <div className="products-copy pixel-font">
-
-                    <span>Products ↗</span>
-
-                    <span>shaped by</span>
-
-                    <span>human</span>
-
-                    <span>behavior</span>
 
                 </div>
 

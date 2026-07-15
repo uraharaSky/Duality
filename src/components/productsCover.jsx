@@ -33,7 +33,7 @@ function ProductsCover() {
 // 1. Shrink PRODUCTS
             tl.to(titleRef.current, {
                 scale: 0.28,
-                x: -215,
+                x: -360,
                 y: -210,
                 ease: "none",
                 duration: 0.6
