@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState} from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -12,6 +12,7 @@ function ProductsCover() {
     const titleRef = useRef(null);
     const menuRef = useRef([]);
     const bandRef = useRef(null);
+    const [activeProduct, setActiveProduct] = useState("scene0");
     // const menuAnimated = useRef(false);
 
     useEffect(() => {
@@ -120,31 +121,40 @@ function ProductsCover() {
 
                         <button
                             ref={el => menuRef.current[0] = el}
-                            className="active"
+                            className={activeProduct === "scene0" ? "active" : ""}
+                            onClick={() => setActiveProduct("scene0")}
                         >
                             Scene0
                         </button>
 
                         <button
                             ref={el => menuRef.current[1] = el}
+                            className={activeProduct === "ally" ? "active" : ""}
+                            onClick={() => setActiveProduct("ally")}
                         >
                             Ally
                         </button>
 
                         <button
                             ref={el => menuRef.current[2] = el}
+                            className={activeProduct === "finsage" ? "active" : ""}
+                            onClick={() => setActiveProduct("finsage")}
                         >
                             FinSage
                         </button>
 
                         <button
                             ref={el => menuRef.current[3] = el}
+                            className={activeProduct === "orion" ? "active" : ""}
+                            onClick={() => setActiveProduct("orion")}
                         >
                             Orion
                         </button>
 
                         <button
-                            ref={el => menuRef.current[4] = el}
+                            ref={el => menuRef.current[3] = el}
+                            className={activeProduct === "hermit" ? "active" : ""}
+                            onClick={() => setActiveProduct("hermit")}
                         >
                             Hermit
                         </button>
