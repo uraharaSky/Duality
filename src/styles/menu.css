@@ -14,7 +14,7 @@
     font-family: "Duality";
     font-size: 1rem;
 
-    cursor: pointer;
+    cursor: None;
 
     transition: all 0.25s ease;
 
@@ -41,7 +41,7 @@
     font-family: "Duality";
     font-size: 1rem;
 
-    cursor: pointer;
+    cursor: None;
 
     transition: all 0.25s ease;
 

@@ -160,7 +160,14 @@ body::-webkit-scrollbar {
             translateY(-4px);
 }
 
-
+@media (pointer: fine) {
+    *,
+    *::before,
+    *::after,
+    *:hover {
+        cursor: none !important;
+    }
+}
 
 
 
