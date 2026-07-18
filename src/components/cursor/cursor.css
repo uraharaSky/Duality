@@ -138,3 +138,21 @@
 
     background: #FF6B6B;
 }
+/* ==========================================================Cursor Scrolling========================================================== */
+
+
+.cursor.scrolling .cursor-ring{
+
+    width:12px;
+    height:34px;
+
+    border-radius:999px;
+}
+
+.cursor.scrolling .cursor-dot{
+
+    height:8px;
+    width:3px;
+
+    border-radius:999px;
+}

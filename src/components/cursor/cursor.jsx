@@ -10,6 +10,7 @@ export default function Cursor() {
 
     // Theme
     const [cursorTheme, setCursorTheme] = useState("dark");
+    const [isScrolling, setIsScrolling] = useState(false);
 
     useEffect(() => {
         // --------------------
@@ -51,19 +52,41 @@ export default function Cursor() {
             }
         };
 
+        let scrollTimeout;
+
+        const handleScroll = () => {
+
+            setIsScrolling(true);
+
+            clearTimeout(scrollTimeout);
+
+            scrollTimeout = setTimeout(() => {
+                setIsScrolling(false);
+            }, 120);
+        };
+
         window.addEventListener("mousemove", moveCursor);
         window.addEventListener("mouseover", handlePointer);
+        window.addEventListener("scroll", handleScroll);
 
         return () => {
             window.removeEventListener("mousemove", moveCursor);
             window.removeEventListener("mouseover", handlePointer);
+            window.removeEventListener("scroll", handleScroll);
+
+            clearTimeout(scrollTimeout);
         };
     }, []);
 
     return (
         <div
             ref={cursorRef}
-            className={`cursor ${cursorShape} ${cursorTheme}`}
+            className={`
+                cursor
+                ${cursorShape}
+                ${cursorTheme}
+                ${isScrolling ? "scrolling" : ""}
+            `}
         >
             <div className="cursor-ring"></div>
             <div className="cursor-dot"></div>
