@@ -12,7 +12,11 @@ function Home() {
 
     return (
     <>
-         <div className = "site-wrapper">
+         <div
+             className = "site-wrapper"
+             data-cursor-theme="dark"
+         >
+
              {/* BACKGROUND PANELS */}
              <div className="panels">
 
@@ -26,6 +30,7 @@ function Home() {
              <button
                  className="menu-toggle pixel-font"
                  onClick={() => setMenuOpen(true)}
+                 data-cursor="interactive"
              >
                  [ MENU ]
              </button>

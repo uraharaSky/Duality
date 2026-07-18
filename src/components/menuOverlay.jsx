@@ -3,11 +3,15 @@ import "../styles/menu.css"
 
 function MenuOverlay({ onClose }) {
     return (
-        <div className="menu-overlay">
+        <div
+            className="menu-overlay"
+            data-cursor-theme="light"
+        >
 
             <button
                 className="close-toggle pixel-font"
                 onClick={onClose}
+                data-cursor="interactive"
             >
                 [ CLOSE ]
             </button>
@@ -23,6 +27,7 @@ function MenuOverlay({ onClose }) {
                         <Link
                             to="/about"
                             onClick={onClose}
+                            data-cursor="interactive"
                         >
                             About Me
                         </Link>
@@ -31,22 +36,34 @@ function MenuOverlay({ onClose }) {
                 </div>
                 <div className="separator"></div>
 
-                <div className="menu-item">
+                <div
+                    className="menu-item"
+                    data-cursor="interactive"
+                >
                     <a href="#products">Products</a>
                 </div>
                 <div className="separator"></div>
 
-                <div className="menu-item">
+                <div
+                    className="menu-item"
+                    data-cursor="interactive"
+                >
                     <a href="#projects">Projects</a>
                 </div>
                 <div className="separator"></div>
 
-                <div className="menu-item">
+                <div
+                    className="menu-item"
+                    data-cursor="interactive"
+                >
                     <a href="#blogs">Blogs</a>
                 </div>
                 <div className="separator"></div>
 
-                <div className="menu-item">
+                <div
+                    className="menu-item"
+                    data-cursor="interactive"
+                >
                     <a href="#contact">Contact</a>
                 </div>
 

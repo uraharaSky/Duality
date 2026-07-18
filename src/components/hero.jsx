@@ -129,11 +129,15 @@ function Hero(){
                         {/* BUTTONS */}
                         <div className="buttons">
 
-                            <button>
+                            <button
+                                data-cursor="interactive"
+                            >
                                 → My Résumé
                             </button>
 
-                            <button className="meow-button">
+                            <button className="meow-button"
+                                    data-cursor="interactive"
+                            >
                                 → Meow
                                 <img
                                     src="/assets/icons/paw-icon.svg"
@@ -158,6 +162,7 @@ function Hero(){
                 <Link
                     to="/about"
                     className="portal-text pixel-font"
+                    data-cursor="interactive"
                 >
                     About me ↗
                 </Link>

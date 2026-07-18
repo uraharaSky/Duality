@@ -1,34 +1,140 @@
+/* ==========================================================Cursor Container========================================================== */
+
 .cursor {
     position: fixed;
-
-    left: 0;
     top: 0;
-
-    width: 14px;
-    height: 14px;
-
-    border: 1.5px solid white;
-    border-radius: 50%;
+    left: 0;
 
     transform: translate(-50%, -50%);
 
     pointer-events: none;
-
     z-index: 99999;
+
+    transition: opacity 0.2s ease;
 }
 
-.cursor-dot {
+
+/* ==========================================================Cursor Ring========================================================== */
+
+.cursor-ring {
     position: absolute;
-
-    width: 2px;
-    height: 2px;
-
-    background: white;
-
-    border-radius: 50%;
 
     top: 50%;
     left: 50%;
 
     transform: translate(-50%, -50%);
+
+    width: 14px;
+    height: 14px;
+
+    border: 1.5px solid #ffffff;
+    border-radius: 50%;
+
+    background: transparent;
+
+    transition:
+            width 220ms cubic-bezier(.22,.61,.36,1),
+            height 220ms cubic-bezier(.22,.61,.36,1),
+            border-radius 220ms cubic-bezier(.22,.61,.36,1),
+            background 220ms ease,
+            border-color 220ms ease,
+            transform 220ms cubic-bezier(.22,.61,.36,1),
+            opacity 220ms ease;
+}
+
+
+/* ==========================================================Cursor Dot========================================================== */
+
+.cursor-dot {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 3px;
+    height: 3px;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+    background: #ffffff;
+
+    transition:
+            width 220ms ease,
+            height 220ms ease,
+            background 220ms ease,
+            opacity 220ms ease;
+}
+
+
+/* ==========================================================Interactive Shape========================================================== */
+
+.cursor.interactive .cursor-ring {
+
+    width: 36px;
+    height: 28px;
+
+    border-radius: 12px;
+}
+
+.cursor.interactive .cursor-dot {
+
+    width: 5px;
+    height: 5px;
+}
+
+
+/* ==========================================================Light Theme========================================================== */
+
+.cursor.dark .cursor-ring {
+
+    border-color: #ffffff;
+    background: transparent;
+}
+
+.cursor.dark .cursor-dot {
+
+    background: #ffffff;
+}
+
+
+/* ==========================================================Interactive + Light Theme========================================================== */
+
+.cursor.dark.interactive .cursor-ring {
+
+    border-color: #FF6B6B;
+    background: rgba(255,107,107,.18);
+}
+
+.cursor.dark.interactive .cursor-dot {
+
+    background: #FF6B6B;
+}
+
+
+/* ==========================================================Coral Theme========================================================== */
+
+.cursor.coral .cursor-ring {
+
+    border-color: #1D3557;      /* Replace with your navy */
+    background: transparent;
+}
+
+.cursor.coral .cursor-dot {
+
+    background: #1D3557;
+}
+
+
+/* ==========================================================Interactive + Coral Theme========================================================== */
+
+.cursor.coral.interactive .cursor-ring {
+
+    border-color: #1D3557;
+    background: #1D3557;
+}
+
+.cursor.coral.interactive .cursor-dot {
+
+    background: #FF6B6B;
 }

@@ -132,6 +132,7 @@ export default function About() {
                 <button
                     className="close-toggle close-toggle-light pixel-font"
                     onClick={() => navigate("/")}
+                    data-cursor="interactive"
                 >
                     [ CLOSE ]
                 </button>
