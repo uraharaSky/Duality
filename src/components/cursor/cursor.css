@@ -141,18 +141,62 @@
 /* ==========================================================Cursor Scrolling========================================================== */
 
 
-.cursor.scrolling .cursor-ring{
+/*.cursor.scrolling .cursor-ring{*/
+
+/*    width:12px;*/
+/*    height:34px;*/
+
+/*    border-radius:999px;*/
+/*}*/
+
+/*.cursor.scrolling .cursor-dot{*/
+
+/*    height:8px;*/
+/*    width:3px;*/
+
+/*    border-radius:999px;*/
+/*}*/
+
+.cursor.scroll-down .cursor-ring{
 
     width:12px;
-    height:34px;
+    height:46px;
 
     border-radius:999px;
+
+    transform:
+            translate(-50%, -35%);
 }
 
-.cursor.scrolling .cursor-dot{
+.cursor.scroll-down .cursor-dot{
 
-    height:8px;
     width:3px;
+    height:12px;
 
     border-radius:999px;
+
+    transform:
+            translate(-50%, -20%);
+}
+
+.cursor.scroll-up .cursor-ring{
+
+    width:12px;
+    height:46px;
+
+    border-radius:999px;
+
+    transform:
+            translate(-50%, -65%);
+}
+
+.cursor.scroll-up .cursor-dot{
+
+    width:3px;
+    height:12px;
+
+    border-radius:999px;
+
+    transform:
+            translate(-50%, -80%);
 }

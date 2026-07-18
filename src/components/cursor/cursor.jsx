@@ -10,7 +10,7 @@ export default function Cursor() {
 
     // Theme
     const [cursorTheme, setCursorTheme] = useState("dark");
-    const [isScrolling, setIsScrolling] = useState(false);
+    const [scrollDirection, setScrollDirection] = useState(null);
 
     useEffect(() => {
         // --------------------
@@ -52,16 +52,27 @@ export default function Cursor() {
             }
         };
 
+
+        let lastScrollY = window.scrollY;
         let scrollTimeout;
+
 
         const handleScroll = () => {
 
-            setIsScrolling(true);
+            const currentScrollY = window.scrollY;
+
+            if (currentScrollY > lastScrollY) {
+                setScrollDirection("down");
+            } else if (currentScrollY < lastScrollY) {
+                setScrollDirection("up");
+            }
+
+            lastScrollY = currentScrollY;
 
             clearTimeout(scrollTimeout);
 
             scrollTimeout = setTimeout(() => {
-                setIsScrolling(false);
+                setScrollDirection(null);
             }, 120);
         };
 
@@ -85,7 +96,7 @@ export default function Cursor() {
                 cursor
                 ${cursorShape}
                 ${cursorTheme}
-                ${isScrolling ? "scrolling" : ""}
+                ${scrollDirection ? `scroll-${scrollDirection}` : ""}
             `}
         >
             <div className="cursor-ring"></div>
