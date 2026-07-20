@@ -13,6 +13,7 @@ function ProductsCover() {
     const menuRef = useRef([]);
     const bandRef = useRef(null);
     const [activeProduct, setActiveProduct] = useState("scene0");
+    const pillRef = useRef(null);
     // const menuAnimated = useRef(false);
 
     useEffect(() => {
@@ -62,31 +63,31 @@ function ProductsCover() {
                 }
             );
 
-            tl.to(bandRef.current, {
-                scaleX: 1,
-                ease: "power3.out",
-                duration: 0.4,
-
-                onComplete: () => {
-
-                    gsap.fromTo(
-                        menuRef.current,
-                        {
-                            opacity: 0,
-                            y: 12
-                        },
-                        {
-                            opacity: 1,
-                            y: 0,
-                            stagger: 0.1,
-                            duration: 0.35,
-                            ease: "power3.out"
-                        }
-                    );
-
-                }
-
-            }, "<");
+            // tl.to(bandRef.current, {
+            //     scaleX: 1,
+            //     ease: "power3.out",
+            //     duration: 0.4,
+            //
+            //     onComplete: () => {
+            //
+            //         gsap.fromTo(
+            //             menuRef.current,
+            //             {
+            //                 opacity: 0,
+            //                 y: 12
+            //             },
+            //             {
+            //                 opacity: 1,
+            //                 y: 0,
+            //                 stagger: 0.1,
+            //                 duration: 0.35,
+            //                 ease: "power3.out"
+            //             }
+            //         );
+            //
+            //     }
+            //
+            // }, "<");
 
 
 
@@ -95,6 +96,48 @@ function ProductsCover() {
         return () => ctx.revert();
 
     }, []);
+    useEffect(() => {
+
+        const button = menuRef.current[0];
+
+        if(!button) return;
+
+        gsap.set(pillRef.current,{
+
+            x:button.offsetLeft,
+
+            width:button.offsetWidth,
+
+            height:button.offsetHeight
+
+        });
+
+    },[]);
+    useEffect(() => {
+
+        const ids = [
+            "scene0",
+            "ally",
+            "finsage",
+            "orion",
+            "hermit"
+        ];
+
+        const index = ids.indexOf(activeProduct);
+
+        const button = menuRef.current[index];
+
+        if (!button) return;
+
+        gsap.to(pillRef.current, {
+            x: button.offsetLeft,
+            width: button.offsetWidth,
+            duration: 0.4,
+            ease: "power3.out"
+        });
+
+    }, [activeProduct]);
+
 
     return (
         <section
@@ -118,6 +161,11 @@ function ProductsCover() {
                 >
 
                     <div className="products-nav">
+
+                        <div
+                            ref={pillRef}
+                            className="nav-pill"
+                        />
 
                         <button
                             ref={el => menuRef.current[0] = el}
@@ -152,7 +200,7 @@ function ProductsCover() {
                         </button>
 
                         <button
-                            ref={el => menuRef.current[3] = el}
+                            ref={el => menuRef.current[4] = el}
                             className={activeProduct === "hermit" ? "active" : ""}
                             onClick={() => setActiveProduct("hermit")}
                         >
