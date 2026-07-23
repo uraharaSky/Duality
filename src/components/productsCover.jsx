@@ -46,26 +46,32 @@ function ProductsCover() {
             });
 
 // 2. Grow Coral Band
-            tl.to(bandRef.current,{
-                scaleX:1,
-                ease:"none",
-                duration:0.6
-            });
+            tl.to(bandRef.current, {
+                scaleX: 1,
+                duration: 0.6
+            })
 
-            tl.fromTo(
-                menuRef.current,
-                {
-                    opacity:0,
-                    y:12
-                },
-                {
-                    opacity:1,
-                    y:0,
-                    stagger:0.08,
-                    ease:"power3.out",
-                    duration:0.25
-                }
-            );
+                .add("nav")
+
+                .to(pillRef.current, {
+                    opacity: 1,
+                    scale: 1,
+                    duration: 0.25,
+                    ease: "back.out(1.7)"
+                }, "nav")
+
+                .fromTo(menuRef.current,
+                    {
+                        opacity: 0,
+                        y: 12
+                    },
+                    {
+                        opacity: 1,
+                        y: 0,
+                        stagger: 0.08,
+                        duration: 0.25,
+                        ease: "power3.out"
+                    }, "nav+=0.05");
 
             tl.add("content")
 
@@ -122,14 +128,12 @@ function ProductsCover() {
 
         if(!button) return;
 
-        gsap.set(pillRef.current,{
-
-            x:button.offsetLeft,
-
-            width:button.offsetWidth,
-
-            height:button.offsetHeight
-
+        gsap.set(pillRef.current, {
+            x: button.offsetLeft,
+            width: button.offsetWidth,
+            height: button.offsetHeight,
+            opacity: 0,
+            scale: 0.8
         });
 
         gsap.set(detailsRef.current, {
