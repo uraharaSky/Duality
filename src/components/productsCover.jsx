@@ -16,6 +16,8 @@ function ProductsCover() {
     const [activeProduct, setActiveProduct] = useState("scene0");
     const product = products[activeProduct];
     const pillRef = useRef(null);
+    const detailsRef = useRef(null);
+    const rightRef = useRef(null);
     // const menuAnimated = useRef(false);
 
     useEffect(() => {
@@ -64,6 +66,22 @@ function ProductsCover() {
                     duration:0.25
                 }
             );
+
+            tl.add("content")
+
+                .to(detailsRef.current, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.6,
+                    ease: "power3.out"
+                }, "content")
+
+                .to(rightRef.current, {
+                    opacity: 1,
+                    x: 0,
+                    duration: 0.6,
+                    ease: "power3.out"
+                }, "content+=0.1");
 
             // tl.to(bandRef.current, {
             //     scaleX: 1,
@@ -114,6 +132,16 @@ function ProductsCover() {
 
         });
 
+        gsap.set(detailsRef.current, {
+            opacity: 0,
+            y: 30
+        });
+
+        gsap.set(rightRef.current, {
+            opacity: 0,
+            x: 30
+        });
+
     },[]);
     useEffect(() => {
 
@@ -137,6 +165,7 @@ function ProductsCover() {
             duration: 0.4,
             ease: "power3.out"
         });
+
 
     }, [activeProduct]);
 
@@ -213,62 +242,67 @@ function ProductsCover() {
 
                 </div>
 
-                <div className="product-details">
+                <div
+                    ref = {detailsRef}
+                    className = "product-details">
 
-                    <div className="product-row-1">
+                        <div className="product-row-1">
 
 
-                        <div className="product-info">
+                            <div className="product-info">
 
                             <span className = "product-serial">
                                 {product.serial}
                             </span>
 
-                            <div className="product-title">
+                                <div className="product-title">
 
-                                <h2 className = "product-name">
-                                    {product.title}
-                                </h2>
+                                    <h2 className = "product-name">
+                                        {product.title}
+                                    </h2>
 
-                                <p className="product-tagline">
-                                    {product.tagline}
-                                </p>
+                                    <p className="product-tagline">
+                                        {product.tagline}
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                            <div className="product-stack">
+
+                                {product.stack.map(item => (
+
+                                    <span key={item}>
+                                        {item}
+                                     </span>
+
+                                ))}
 
                             </div>
 
                         </div>
 
-                        <div className="product-stack">
+                        <div className="product-row-2">
 
-                            {product.stack.map(item => (
+                            <div className="product-description">
 
-                                <span key={item}>
-                                    {item}
-                                </span>
+                                <p>{product.description}</p>
 
-                            ))}
+                            </div>
 
                         </div>
-
-                    </div>
-
-                    <div className="product-row-2">
-
-                        <div className="product-description">
-
-                            <p>{product.description}</p>
-
-                        </div>
-
-                    </div>
-
                 </div>
             </div>
 
 
-            <div className="products-cover-right">
 
-                <div className="product-showcase">
+            <div className="products-cover-right"
+            >
+                <div
+                    ref = {rightRef}
+                    className="product-showcase"
+                >
 
                     {product.question.map((line,index)=>(
 
@@ -281,8 +315,6 @@ function ProductsCover() {
                 </div>
 
             </div>
-
-
 
         </section>
     );
