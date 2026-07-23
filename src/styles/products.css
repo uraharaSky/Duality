@@ -20,13 +20,26 @@
 /* Cover Left Side                                                            */
 /* -------------------------------------------------------------------------- */
 
-.products-cover-left {
+/*.products-cover-left {*/
+/*    position: relative;*/
+
+/*    display: flex;*/
+/*    align-items: center;*/
+
+/*    padding-left: 80px;*/
+
+/*    overflow: visible;*/
+/*}*/
+
+.products-cover-left{
     position: relative;
 
     display: flex;
-    align-items: center;
+    flex-direction: column;
 
-    padding-left: 80px;
+    /*padding-left: 80px;*/
+
+    height: 100%;
 
     overflow: visible;
 }
@@ -227,53 +240,191 @@
     color: white;
 }
 
-/* -------------------------------------------------------------------------- */
-/* Product Card Stack                                                         */
-/* -------------------------------------------------------------------------- */
 
-.product-stack {
-    position: relative;
 
-    width: 650px;
-    height: 420px;
+/*.product-details{*/
+/*    display:flex;*/
+/*    flex: 1;*/
+/*    flex-direction:column;*/
+/*    gap:5rem;*/
+/*    margin-top:13rem;*/
+/*    font-family: "Duality";*/
+/*    !*border: 2px dashed salmon;*!*/
+/*}*/
 
-    margin-top: 3rem;
+/*.product-top{*/
+/*    display:flex;*/
+/*    justify-content:space-between;*/
+/*    align-items:flex-start;*/
+/*    margin:4rem;*/
+
+/*}*/
+
+/*.product-info{*/
+/*    display:flex;*/
+/*    gap:1.5rem;*/
+/*}*/
+
+/*.product-stack{*/
+/*    display:flex;*/
+/*    flex-direction:column;*/
+/*    align-items:flex-start;*/
+
+/*}*/
+
+/*.product-description{*/
+/*    display:flex;*/
+/*    margin-left: 4rem;*/
+/*}*/
+
+.product-details{
+    position:absolute;
+
+    top:200px;      /* 170 + 44 + ~16px gap */
+
+    left:0;
+    right:0;
+    bottom:0;
+
+    display:flex;
+    flex-direction:column;
+
+    padding:2rem;
 }
 
-.product-card {
-    position: absolute;
+.product-row-1{
 
-    width: 100%;
-    height: 100%;
+    display:flex;
 
-    background: #d9d9d9;
+    justify-content:space-between;
 
-    border-radius: 12px;
+    align-items:flex-start;
+
+    flex:0 0 220px;
+
+    /* temporary */
+    border:2px solid red;
+
 }
 
-.back-2 {
-    top: 0;
-    left: 0;
+.product-info{
 
-    z-index: 1;
+    width:65%;
+    height:100%;
+
+    display:flex;
+    align-items:flex-start;
+    gap:2rem;
+
+    border:2px solid yellow;
 }
 
-.back-1 {
-    top: 20px;
-    left: 20px;
+.product-stack{
 
-    z-index: 2;
+    width:180px;
+    height:100%;
 
-    border: 3px solid #2489d7;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+
+    border:2px solid cyan;
 }
 
-.front {
-    top: 40px;
-    left: 40px;
+.product-row-2{
 
-    z-index: 3;
+    flex:1;
+    padding-top: 10px;
+
+    border:2px solid green;
+
 }
 
+.product-description{
+
+    width:70%;
+
+    height:100%;
+
+    display:flex;
+    align-items:flex-start;
+
+    border:2px solid white;
+}
+
+.product-title{
+
+    display:flex;
+    flex-direction:column;
+
+    gap:.6rem;
+
+    border:2px solid magenta;
+}
+
+.product-serial{
+
+    font-family: "Duality";
+
+    font-size: 2rem;
+    font-weight: 400;
+
+    color: rgba(255,255,255,.9);
+
+    line-height: 1;
+}
+
+.product-tagline{
+
+    font-family:"Duality";
+
+    font-size:2rem;
+
+    color:rgba(255,255,255,.75);
+
+    line-height:1.3;
+}
+
+.product-name{
+
+    font-family: "Duality";
+
+    font-size: 5rem;
+    font-weight: 400;
+
+    color:white;
+
+    line-height:.9;
+}
+
+.product-stack{
+
+    font-family:"Duality";
+
+    font-size:1.6rem;
+
+    color:white;
+
+    line-height:1.8;
+}
+
+.product-stack span{
+
+    display:block;
+}
+
+.product-description{
+
+    font-family:"Duality";
+
+    font-size:1.6rem;
+
+    line-height:1.8;
+
+    color:rgba(255,255,255,.85);
+
+    max-width:75%;
+}
 /* -------------------------------------------------------------------------- */
 /* Right Panel                                                                */
 /* -------------------------------------------------------------------------- */

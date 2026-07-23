@@ -1,44 +1,53 @@
-const products = [
-    {
-        id: 1,
-        name: "Scen0",
-        tagline: "AI Simulation Platform",
-        color: "#FF7A5C",
-        logo: "",
-        description: "",
-    },
-    {
-        id: 2,
-        name: "Ally",
-        tagline: "Personal AI Companion",
-        color: "#7DE5E2",
-        logo: "",
-        description: "",
-    },
-    {
-        id: 3,
-        name: "FinSage",
-        tagline: "Finance Intelligence",
-        color: "#F7C54A",
-        logo: "",
-        description: "",
-    },
-    {
-        id: 4,
-        name: "Orion",
-        tagline: "Operations Platform",
-        color: "#8E7DFF",
-        logo: "",
-        description: "",
-    },
-    {
-        id: 5,
-        name: "Hermit",
-        tagline: "Private Workspace",
-        color: "#9FE870",
-        logo: "",
-        description: "",
-    }
-];
+export const products = {
 
-export default products;
+    scene0: {
+        serial: "01",
+        title: "Scene0",
+        tagline: "AI Simulation Platform",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        stack: ["React", "Spring Boot", "Python", "PostgreSQL", "AWS"],
+        question: "What makes Scene0 special?",
+        color: "#6750ff"
+    },
+
+    ally: {
+        serial: "02",
+        title: "Ally",
+        tagline: "Personal AI Companion",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        stack: ["React", "Node.js", "MongoDB"],
+        question: "What makes Ally unique?",
+        color: "#2ECC71"
+    },
+
+    finsage: {
+        serial: "03",
+        title: "FinSage",
+        tagline: "Financial Intelligence",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        stack: ["Next.js", "Python", "FastAPI"],
+        question: "How does FinSage guide decisions?",
+        color: "#F39C12"
+    },
+
+    orion: {
+        serial: "04",
+        title: "Orion",
+        tagline: "Developer Workspace",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        stack: ["React", "Express", "PostgreSQL"],
+        question: "Why Orion for developers?",
+        color: "#3498DB"
+    },
+
+    hermit: {
+        serial: "05",
+        title: "Hermit",
+        tagline: "Privacy First",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        stack: ["Electron", "Rust", "SQLite"],
+        question: "What makes Hermit secure?",
+        color: "#E74C3C"
+    }
+
+};

@@ -3,6 +3,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import "../styles/products.css";
+import { products } from "../data/productsData.js";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -13,6 +14,7 @@ function ProductsCover() {
     const menuRef = useRef([]);
     const bandRef = useRef(null);
     const [activeProduct, setActiveProduct] = useState("scene0");
+    const product = products[activeProduct];
     const pillRef = useRef(null);
     // const menuAnimated = useRef(false);
 
@@ -211,9 +213,73 @@ function ProductsCover() {
 
                 </div>
 
+                <div className="product-details">
+
+                    <div className="product-row-1">
+
+
+                        <div className="product-info">
+
+                            <span className = "product-serial">
+                                {product.serial}
+                            </span>
+
+                            <div className="product-title">
+
+                                <h2 className = "product-name">
+                                    {product.title}
+                                </h2>
+
+                                <p className="product-tagline">
+                                    {product.tagline}
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div className="product-stack">
+
+                            {product.stack.map(item => (
+
+                                <span key={item}>
+                                    {item}
+                                </span>
+
+                            ))}
+
+                        </div>
+
+                    </div>
+
+                    <div className="product-row-2">
+
+                        <div className="product-description">
+
+                            <p>{product.description}</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
             </div>
 
-            <div className="products-cover-right" />
+
+            <div className="products-cover-right">
+
+                <div
+                    className="demo-box"
+                    style={{
+                        background: product.color
+                    }}
+                >
+                    {product.title}
+                </div>
+
+            </div>
+
+
 
         </section>
     );
