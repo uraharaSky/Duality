@@ -19,6 +19,7 @@ function ProductsCover() {
     const detailsRef = useRef(null);
     const rightRef = useRef(null);
     const previewRef = useRef(null);
+    const leftPanelRef = useRef(null);
     // const menuAnimated = useRef(false);
 
     useEffect(() => {
@@ -196,14 +197,34 @@ function ProductsCover() {
 
     const movePreview = (e) => {
 
+        const leftRect = leftPanelRef.current.getBoundingClientRect();
+        const previewRect = previewRef.current.getBoundingClientRect();
+
+        const gap = 20;
+
+        let x = e.clientX + gap;
+        let y = e.clientY + gap;
+
+    // Don't let it cross into the coral panel
+        if (x + previewRect.width > leftRect.right) {
+            x = e.clientX - previewRect.width - gap;
+        }
+
+    // Bottom overflow
+        if (y + previewRect.height > window.innerHeight) {
+            y = e.clientY - previewRect.height - gap;
+        }
+
         gsap.to(previewRef.current,{
-            x:e.clientX + 10,
-            y:e.clientY + 10,
-            // duration:0.15,
-            // ease:"power3.out"
+            x,
+            y,
+            duration:0.15,
+            ease:"power3.out"
         });
 
     };
+
+
 
 
     return (
@@ -212,7 +233,10 @@ function ProductsCover() {
             className="products-cover"
         >
 
-            <div className="products-cover-left">
+            <div
+                className="products-cover-left"
+                ref={leftPanelRef}
+            >
 
                 <h1
                     ref={titleRef}
