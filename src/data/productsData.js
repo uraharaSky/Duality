@@ -7,7 +7,8 @@ export const products = {
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         stack: ["React", "Spring Boot", "Python", "PostgreSQL", "AWS"],
         question: ["What makes Scene0 special?"],
-        color: "#6750ff"
+        preview: null,
+        previewText: "Coming Soon"
     },
 
     ally: {
@@ -17,7 +18,8 @@ export const products = {
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         stack: ["React", "Node.js", "MongoDB"],
         question: ["What makes Ally unique?"],
-        color: "#2ECC71"
+        preview: null,
+        previewText: "Coming Soon"
     },
 
     finsage: {
@@ -27,7 +29,8 @@ export const products = {
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         stack: ["Next.js", "Python", "FastAPI"],
         question: ["How does FinSage guide decisions?"],
-        color: "#F39C12"
+        preview: null,
+        previewText: "Coming Soon"
     },
 
     orion: {
@@ -37,7 +40,8 @@ export const products = {
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         stack: ["React", "Express", "PostgreSQL"],
         question: ["Why Orion for developers?"],
-        color: "#3498DB"
+        preview: null,
+        previewText: "Coming Soon"
     },
 
     hermit: {
@@ -47,7 +51,8 @@ export const products = {
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         stack: ["Electron", "Rust", "SQLite"],
         question: ["What makes Hermit secure?"],
-        color: "#E74C3C"
+        preview: null,
+        previewText: "Coming Soon"
     }
 
 };

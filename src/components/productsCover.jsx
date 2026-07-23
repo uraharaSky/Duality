@@ -18,6 +18,7 @@ function ProductsCover() {
     const pillRef = useRef(null);
     const detailsRef = useRef(null);
     const rightRef = useRef(null);
+    const previewRef = useRef(null);
     // const menuAnimated = useRef(false);
 
     useEffect(() => {
@@ -173,6 +174,37 @@ function ProductsCover() {
 
     }, [activeProduct]);
 
+    const showPreview = () => {
+
+        gsap.to(previewRef.current,{
+            opacity:1,
+            duration:0.25,
+            ease:"power2.out"
+        });
+
+    };
+
+    const hidePreview = () => {
+
+        gsap.to(previewRef.current,{
+            opacity:0,
+            duration:0.2,
+            ease:"power2.out"
+        });
+
+    };
+
+    const movePreview = (e) => {
+
+        gsap.to(previewRef.current,{
+            x:e.clientX + 10,
+            y:e.clientY + 10,
+            // duration:0.15,
+            // ease:"power3.out"
+        });
+
+    };
+
 
     return (
         <section
@@ -248,7 +280,11 @@ function ProductsCover() {
 
                 <div
                     ref = {detailsRef}
-                    className = "product-details">
+                    className = "product-details"
+                    onMouseEnter={showPreview}
+                    onMouseLeave={hidePreview}
+                    onMouseMove={movePreview}
+                >
 
                         <div className="product-row-1">
 
@@ -317,6 +353,30 @@ function ProductsCover() {
                     ))}
 
                 </div>
+
+            </div>
+
+            <div
+                ref={previewRef}
+                className="product-preview"
+            >
+
+                {product.preview ? (
+
+                    <img
+                        src={product.preview}
+                        alt={product.title}
+                    />
+
+                ) : (
+
+                    <div className="preview-placeholder">
+
+                        <span>{product.previewText}</span>
+
+                    </div>
+
+                )}
 
             </div>
 
