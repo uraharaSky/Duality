@@ -6,7 +6,7 @@ export const products = {
         tagline: "AI Simulation Platform",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         stack: ["React", "Spring Boot", "Python", "PostgreSQL", "AWS"],
-        question: "What makes Scene0 special?",
+        question: ["What makes Scene0 special?"],
         color: "#6750ff"
     },
 
@@ -16,7 +16,7 @@ export const products = {
         tagline: "Personal AI Companion",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         stack: ["React", "Node.js", "MongoDB"],
-        question: "What makes Ally unique?",
+        question: ["What makes Ally unique?"],
         color: "#2ECC71"
     },
 
@@ -26,7 +26,7 @@ export const products = {
         tagline: "Financial Intelligence",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         stack: ["Next.js", "Python", "FastAPI"],
-        question: "How does FinSage guide decisions?",
+        question: ["How does FinSage guide decisions?"],
         color: "#F39C12"
     },
 
@@ -36,7 +36,7 @@ export const products = {
         tagline: "Developer Workspace",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         stack: ["React", "Express", "PostgreSQL"],
-        question: "Why Orion for developers?",
+        question: ["Why Orion for developers?"],
         color: "#3498DB"
     },
 
@@ -46,7 +46,7 @@ export const products = {
         tagline: "Privacy First",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         stack: ["Electron", "Rust", "SQLite"],
-        question: "What makes Hermit secure?",
+        question: ["What makes Hermit secure?"],
         color: "#E74C3C"
     }
 

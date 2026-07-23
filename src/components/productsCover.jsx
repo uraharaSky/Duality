@@ -268,13 +268,16 @@ function ProductsCover() {
 
             <div className="products-cover-right">
 
-                <div
-                    className="demo-box"
-                    style={{
-                        background: product.color
-                    }}
-                >
-                    {product.title}
+                <div className="product-showcase">
+
+                    {product.question.map((line,index)=>(
+
+                        <p key={index}>
+                            {line}
+                        </p>
+
+                    ))}
+
                 </div>
 
             </div>
